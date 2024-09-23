@@ -85,7 +85,7 @@ for i,l in enumerate(range(4,9)):
         )
 
 
-ax.set_ylabel("$E/N$")
+ax.set_ylabel("$E$")
 ax.set_xlabel("$h$")
 handles, labels = ax.get_legend_handles_labels()
 handles_mps, labels_mps = handles[::2], labels[::2]
