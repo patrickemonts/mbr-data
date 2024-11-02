@@ -61,6 +61,7 @@ f, ax = plt.subplots(1, 1, figsize=style.figsize)
 colorvec_purple = ["b38ad9ff","ac60efff","9747deff","6b28a7ff","5d169cff"]
 colorvec_orange = ["ffca9aff","ef944bff","ff7f0eff","c9600cff","a3500dff"]
 
+degree = 2
 for i,l in enumerate(range(4,9)):
     # Plot MPS
     df_mps = df[(df["type"] == "mps") & (df["nx"] == l)]
@@ -77,10 +78,10 @@ for i,l in enumerate(range(4,9)):
     df_mbr = df[(df["type"] == "mbr") & (df["nx"] == l)]
     if len(df_mbr) > 0:
         ax.plot(
-            df_mbr[df_mbr["degree"] == 3]["h"],
-            df_mbr[df_mbr["degree"] == 3]["energy"],
+            df_mbr[df_mbr["degree"] == degree]["h"],
+            df_mbr[df_mbr["degree"] == degree]["energy"],
             'P',
-            label=f"MBR - 3, L = {l} ",
+            label=f"MBR - {degree}, L = {l} ",
             **style.create_markers(f"#{colorvec_purple[i]}"),
         )
 
