@@ -1,10 +1,10 @@
-# Data for multiple basis representation manuscript
+# Data for the Multiple Basis Representation Manuscript
 
-This repsoitory contains the data to generate the plots in the manuscript "XXX" (arXiv:2409.XXXXX).
+This repository contains the data to generate the plots in the manuscript "Multiple-basis representation of quantum states" (arXiv:2411.XXXXX).
 
 ## Table of Contents
 
-- [Data for topological Bell manuscript](#data-for-topological-bell-manuscript)
+- [Data for the Multiple Basis Representation Manuscript](#data-for-the-multiple-basis-representation-manuscript)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Installation](#installation)
@@ -12,7 +12,7 @@ This repsoitory contains the data to generate the plots in the manuscript "XXX" 
 
 ## Introduction
 
-Each script in the main folder produces one plot of the paper (arxiv:2405.XXXX).
+Each script in the main folder produces one plot of the paper (arxiv:2411.XXXX).
 The scripts do *not* take command line parameters and the data sources are hard-coded on purpose.
 This repository is not a development directory, but a data archive.
 
@@ -37,7 +37,7 @@ The virtual environment can be deactivated with `deactivate`.
 2. Cloning the code  
 You can obtain the code by cloning the repo with
 ```
-git clone git@gitlab.com:XXXX
+git clone git@github.com:patrickemonts/mbr-data.git
 ```
 
 3. Preparation of the environment  
@@ -46,16 +46,6 @@ In order to install all required packages for the simulation, execute
 ```
 pip install -r requirements.txt
 ```
-
-4. Modification of the PYTHONPATH  
-Since we are working with a package (`mbrenv`), we have to add it to the PYTHONPATH in order to make Python aware of its existence.
-We add the repository to the PYTHONPATH with the following command
-```export PYTHONPATH=$PYTHONPATH:<path_to_repo>```
-where `<path_to_repo>` is the location of the repository on your computer.
-
-If you want to make the change persistent, i.e. it remains after closing the terminal, you can consider adding it to your `~/.bashrc` (for bash) or `~/.zshrc` (for zsh).
-
-At a later stage a proper installation via a `setup.py` script will be added.
 
 ## Usage
 
