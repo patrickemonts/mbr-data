@@ -64,24 +64,24 @@ colorvec_orange = ["ffca9aff","ef944bff","ff7f0eff","c9600cff","a3500dff"]
 degree = 2
 for i,l in enumerate(range(4,9)):
     # Plot MPS
-    df_mps = df[(df["type"] == "mps") & (df["nx"] == l)]
+    df_mps = df[(df["type"] == "mps") & (df["nx"] == l) & (df["ny"] == l)]
     if len(df_mps) > 0:
         ax.plot(
             df_mps["h"],
             df_mps["energy"],
             "^",
-            label=f"MPS, L = {l}",
+            label=fr"MPS, $L = {l}\times{l}$",
             **style.create_markers(f"#{colorvec_orange[i]}")
         )
 
     # Plot MBR
-    df_mbr = df[(df["type"] == "mbr") & (df["nx"] == l)]
+    df_mbr = df[(df["type"] == "mbr") & (df["nx"] == l) & (df["ny"] == l)]
     if len(df_mbr) > 0:
         ax.plot(
             df_mbr[df_mbr["degree"] == degree]["h"],
             df_mbr[df_mbr["degree"] == degree]["energy"],
             'P',
-            label=f"MBR - {degree}, L = {l} ",
+            label=fr"MBR - {degree}, L = ${l}\times{l}$",
             **style.create_markers(f"#{colorvec_purple[i]}"),
         )
 

@@ -59,13 +59,13 @@ df["type_plot"] = df["type"] + df["degree_str"]
 f, ax = plt.subplots(1, 1, figsize=style.figsize)
 
 # Plot MPS
-df_mps = df[(df["type"] == "mps") & (df["nx"] == 8)]
+df_mps = df[(df["type"] == "mps") & (df["nx"] == 8) & (df["ny"] == 8)]
 if len(df_mps) > 0:
     ax.plot(
         df_mps["h"],
         df_mps["energy_per_site"],
         "^",
-        label="MPS, L = 8",
+        label=r"MPS, $L = 8\times8$",
         **style.create_markers("C1"),
     )
 
@@ -74,13 +74,13 @@ if len(df_mps) > 0:
 colorvec = ["b38ad9ff","ac60efff","9747deff","6b28a7ff","5d169cff"]
 
 for i,l in enumerate(range(4,9)):
-    df_mbr = df[(df["type"] == "mbr") & (df["nx"] == l)]
+    df_mbr = df[(df["type"] == "mbr") & (df["nx"] == l) & (df["ny"] == l)]
     if len(df_mbr) > 0:
         ax.plot(
             df_mbr[df_mbr["degree"] == 3]["h"],
             df_mbr[df_mbr["degree"] == 3]["energy_per_site"],
             'P',
-            label=f"MBR - 3, L = {l} ",
+            label=fr"MBR - 3, $L = {l}\times{l}$",
             **style.create_markers(f"#{colorvec[i]}"),
         )
 
